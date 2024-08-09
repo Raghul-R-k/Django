@@ -114,3 +114,18 @@ Django makes use of a directory structure to arrange different parts of the web 
 
 
 
+Step 1: mkvirtualenv envname
+Step 2: install required packages
+Step 3: pip freeze (check the packages )
+Step 4: creating a project
+Command : Django-admin startproject projectname
+Step 5: py manage.py runserver
+
+
+
+
+        deactivate -> to deactivate the environment
+
+        workon -> to check for the environments
+
+        workon environment_name -> to choose the environment 
