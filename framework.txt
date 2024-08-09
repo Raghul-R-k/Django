@@ -1,0 +1,116 @@
+Framework :
+    -> it is a structure that you can build software on it 
+    -> Using Framework Saves time and reduces the risk of error'S
+    -> you don't need to configure it (it creates a directory structure)
+
+it is structure that you can build software on it
+
+Using framework saves time and reduces the risk of errors
+
+you don't need to configure it (it creates a directory structure)
+
+libraries
+    libraries- collection of pre written code  that can be used to perform common task
+    user/programmer is calling code 
+
+    ex-import math 
+    math.sqrt(16)
+    4.0
+
+    framework
+    ->in framework it is code  in the framwork that calles the code
+    ->framework tells where you can put your code
+
+    ===============================================================
+
+    Django
+
+    ->Open-source web framework written in python that allows you to create web application
+    ->Supported by an independent foundation (Django software foundation)
+    ->Django is primarily a backend framework , it has features that allow it to handle frontend development as well
+
+
+    why Django :
+
+    ->set-up easy
+    ->ready-to-user interface for administration activities
+
+    ===========================================================================
+
+    Python Package Index(PyPi)
+
+    Repositry of software for the python programmming language 
+
+    (helps you to find and install software developed and shared by python community)
+
+
+Installing Python 3.9.10
+
+
+1) Add to Path
+2)Add Environment 
+
+check in edit environment avriablle
+
+pip install virtualenvwrapper-win
+
+mkvirtualenv template
+
+pip freeze
+
+pip install django
+   
+django-admin startproject schedule
+
+cd schedule
+
+workon environment_name
+
+
+
+
+
+Structure :
+
+
+Django makes use of a directory structure to arrange different parts of the web application
+
+
+
+
+-->Schedule 
+	schedule --> __init__.py
+		    settings.py
+		    urls.py
+		    wsgi.py
+	db.sqlite3
+	manage.py
+
+	
+	manage.py : 
+		
+		->command-line utility for our project
+		->the file contains the code for running the server, makemigrations... and several commands
+		->it lets you to interact with your project
+
+    settings.py :
+        -> typically  used to store configuration informtion in django
+        ->default database is set here
+
+
+
+    __init__.py :
+        ->empty file , function of this file tells python interpreter that is directory has package.
+
+
+
+    urls.py
+        -> used to provide you the address of the particular page
+
+
+
+    wsgi.py(web server gateway interface)
+        -> it is the way how servers interact with the applications asgi.py(ASGI works similar to WSGI)
+
+
+
