@@ -24,8 +24,8 @@ def monthly_details_by_number(request,month):
 
     # return HttpResponseRedirect('/month/'+redirect_month)
     return HttpResponseRedirect(redirect_path)
-
     # return HttpResponse(month_schedule.get(redirect_month))
+
 
 def monthly_details(request,month):
     try:

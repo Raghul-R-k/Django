@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block page_title %}{{section_name}}{% endblock %}
+{% block content %}
+{% include 'includes/header.html' %}
+    <div id="section1">
+        <img src="https://cdn.pixabay.com/photo/2023/08/02/18/21/yoga-8165759_1280.jpg" alt="Image">
+        <div>
+            <h1>{{ section_name }}</h1>
+            <br>
+            <div class="about-text">
+                <p>
+                    I am a driven and passionate Software Developer currently working at Changepond Technologies. My role has allowed me to refine my expertise and collaborate with talented professionals who inspire me to push the boundaries of what is possible. I believe in continuous learning and am always eager to take on new challenges that help me grow both professionally and personally.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="section2" class="section">    
+        {% include 'includes/cards.html' %}
+    </div>
+    {% include 'includes/footer.html' %}
+{% endblock %}

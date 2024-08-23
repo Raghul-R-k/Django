@@ -129,3 +129,56 @@ Step 5: py manage.py runserver
         workon -> to check for the environments
 
         workon environment_name -> to choose the environment 
+
+
+12/09/2024
+
+Step: 1 – Xammp server create database
+Step 2 – In the environment where you have install Django
+(in the same environment pip install mysqlclient ==2.2.0)
+Step 3 – create a project
+Step 4 – settings.py
+DATABASES = {
+   'default': {
+       'ENGINE': 'django.db.backends.mysql',
+       'NAME': 'bookmanagement',
+       'PORT': '3306',
+       'USER': 'root',
+       'PASSWORD':'',
+       'HOST':'localhost'
+   }
+}
+Write connectivity code
+Step5 : py manage.py migrate
+Step6: Install app : ‘author’
+Step7 : Django-admin startapp author
+Step8 : models.py structure
+Step9: makemigrations and migrate
+
+Field : 
+    ->models form is used to create a column in a database
+
+Why we use meta ?
+    ->we directily use model.py file and creating field using class meta
+    ->to avoid name clashes
+
+
+
+
+
+
+13/09/2024
+
+
+14/09/2024
+
+To create webpage
+
+
+21/09/2024
+
+In Forms project -> Create Profile_upload app
+
+pip install pillow -> For adding images in the model
+
+

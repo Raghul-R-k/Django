@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css_files %}
+<link rel='stylesheet' href="{% static 'author/index.css' %}">
+{% endblock %}
+{% block content %}
+    <ul>
+        {% for author in authors %}
+        <li><a href="{% url 'author_detail' author.id %}">{{ author.first_name }}</a></li>
+        {% endfor %}
+        <h1>Number of authors: {{ author_count }}</h1>
+        <h1>Average Rating: {{ author_rating }}</h1>
+    </ul>
+{% endblock %}

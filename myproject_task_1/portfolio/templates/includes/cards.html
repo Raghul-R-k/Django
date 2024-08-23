@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block page_title %} Month List{% endblock %}
+
+{% block content %}
+<div class="card-container">
+    {% for card in cards %}
+    <div class="card">
+        <div class="card-title">{{ card.card_title }}</div>
+        <img src="{{ card.image }}" alt="Image {{ card.id }}">
+        <div class="card-description">{{ card.card_description }}</div>
+        <a href="{% url 'detail_page' card_id=card.id %}">More...</a>
+    </div>
+    {% endfor %}    
+</div>
+{% endblock %}
