@@ -1,15 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block titlepage %}
+Card Upload
+{% endblock %}
+
+{% block content %}
+
+{% include 'includes/header.html' %}
+
+<div class="center">
+    <h2>Upload cards</h2>
     <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{form}}
+        {{form.as_p}}
         <button type="submit">Upload</button>
     </form>
-</body>
-</html>
+</div>
+
+{% include 'includes/footer.html' %}
+{% endblock %}

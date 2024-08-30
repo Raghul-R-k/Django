@@ -40,29 +40,8 @@ from django.views import View
 from django.urls import reverse
 from .models import ImgAppDb,Comment
 from .forms import post_form
-from django.views.generic.edit import CreateView # type: ignore
+from django.views.generic.edit import CreateView 
 from django.views.generic import ListView
-
-# class post_page_view(View):
-#     def get(self, request):
-#         form = post_form()
-#         return render(request, 'imgapp/forms.html', {'form': form})
-
-#     def post(self, request):
-#         submittedform = post_form(request.POST, request.FILES)
-
-#         if submittedform.is_valid():
-#             connect = ImgAppDb(
-#                 card_title=submittedform.cleaned_data['card_title'],
-#                 card_description=submittedform.cleaned_data['card_description'],
-#                 image=submittedform.cleaned_data['Image']  
-#             )
-#             connect.save()
-#             return HttpResponseRedirect(reverse('post_page_view'))  
-#         else:
-#             print(submittedform.errors)  
-
-#         return render(request, 'imgapp/forms.html', {'form': submittedform})
 
 
 def land_page(request):
@@ -72,18 +51,15 @@ def land_page(request):
 
 def second_page(request):
     cards_query = ImgAppDb.objects.all()
-    return render(request, 'includes/cards.html', {'cards': cards_query, 'showall': True})
+    return render(request, 'imgapp/Allcards.html', {'cards': cards_query, 'showall': True})
 
 def detail_page(request, slug):
     card = ImgAppDb.objects.filter(slug=slug).first()
     return render(request, 'imgapp/detail.html', {'card': card})
 
-
 def About_us(request):
     return render(request, 'imgapp/AboutUs.html')
 
-def forms_page(request):
-    return render(request, 'imgapp/forms.html')
 
 class commentCreateView(CreateView):
     model = Comment
@@ -96,70 +72,5 @@ class post_page_view(CreateView):
     template_name = "imgapp/simple_form.html"
     fields = ['card_title', 'image', 'card_description', 'author', 'tags']
     success_url ='Add_Cards'
-
-
-
-
-
-
-# base.html
-
-# <!-- {% load static %}
-# <!DOCTYPE html>
-# <html lang="en">
-# <head>
-#     <meta charset="UTF-8">
-#     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-#     <title>{% block page_title %}{% endblock %}</title>
-# </head>
-# <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-# <link rel='stylesheet' href="{% static 'file.css' %}">
-# {% block css_files %}
-# {% endblock %}
-
-# {% comment %} {% include 'includes/header.html' %}
-# {% include 'includes/footer.html' %} {% endcomment %}
-
-# <body>
-#     {% block content %}
-#     {% endblock %}
-   
-# </body>
-# </html> -->
-
-# <!-- <header class="p-3 bg-dark text-white">
-#     <div class="row">
-#         <div class="col">
-#            <a class="text-decoration-none text-light" href="./index.html"><h3>Raghul's Portfolio</h3></a> 
-#         </div>
-#         <div class="col">
-#             <div class="d-flex justify-content-center gap-3">
-#                 <a class="text-light text-decoration-none" href="{% url 'land_page' %}">Home</a>
-#                 <a class="text-light text-decoration-none" href="{% url 'second_page' %}">All Cards</a>
-#                 <a class="text-light text-decoration-none" href="{% url 'simple_forms' %}">Add Cards</a>
-#                 {% comment %} <a class="text-light text-decoration-none" href="">Contact</a> {% endcomment %}
-#             </div>
-#         </div>
-#     </div>
-# </header> -->
-
-
-
-# <!-- {% extends "base.html" %}
-# {% block page_title %} all_cards{% endblock %}
-
-# {% block content %}
-# <div class="card-container">
-#     {% for card in cards %}
-#     <div class="card">
-#         <div class="card-title">{{ card.card_title }}</div>
-#         <img src="{{ card.image }}" alt="Image {{ card.id }}">
-#         <div class="card-description">{{ card.card_description }}</div>
-#         <a href="{% url 'detail_page' card_id=card.id %}">More...</a>
-#     </div>
-#     {% endfor %}    
-# </div>
-# {% endblock %} -->
-
 
 
