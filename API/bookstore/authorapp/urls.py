@@ -10,7 +10,7 @@ router = DefaultRouter()
 
 router.register('', AuthorViewset, basename='author')
 
-app_name ='author'
+app_name ='authorapp'
 
  
 

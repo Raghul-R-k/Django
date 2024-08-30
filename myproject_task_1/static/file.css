@@ -48,7 +48,7 @@ body {
 }
 
 #section1 .about-text {
-  max-width: 70%; 
+  max-width: 100%; 
 }
 
 #section1 .about-text p {
@@ -69,17 +69,20 @@ body {
 
 .card {
     background-color: #fff;
-    border: none;
+    border: 1px solid #ddd; /* Add a border to see the card boundaries */
+    margin-bottom: 20px;
     border-radius: 15px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     width: 300px;
     overflow: hidden;
     text-align: center;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    gap: 20px; 
+
 }
 
 .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(10px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 

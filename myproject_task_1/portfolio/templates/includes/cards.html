@@ -1,15 +1,25 @@
 {% extends "base.html" %}
-{% block page_title %} Month List{% endblock %}
+{% load static %}
+
+{% block page_title %}{{ section_name }}{% endblock %}
 
 {% block content %}
 <div class="card-container">
     {% for card in cards %}
     <div class="card">
-        <div class="card-title">{{ card.card_title }}</div>
-        <img src="{{ card.image }}" alt="Image {{ card.id }}">
-        <div class="card-description">{{ card.card_description }}</div>
-        <a href="{% url 'detail_page' card_id=card.id %}">More...</a>
+        <img src="{{ card.image.url }}" class="card-img-top" alt="Image {{ card.slug }}">
+        <div class="card-body">
+            <h3 class="card-title">{{ card.card_title }}</h3>
+            <p class="card-text text-muted">{{ card.date }} | {{ card.time }}</p>
+            {% if card.slug %}
+                <a href="{% url 'detail_page' card.slug %}" class="btn btn-primary">More...</a>
+            {% else %}
+                <p class="text-muted">No details available</p>
+            {% endif %}
+        </div>
     </div>
-    {% endfor %}    
+    {% endfor %}
 </div>
+
 {% endblock %}
+
